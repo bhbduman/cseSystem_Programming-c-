@@ -1,0 +1,56 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage[top=2.5cm, left=2.3cm, right=2.7cm, bottom=3.0cm]{geometry}
+\usepackage{accents}
+%\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{sectsty}
+\usepackage{titlesec}
+\usepackage{listings}
+
+\titleformat{\chapter}{\normalfont\huge}{\thechapter.}{20pt}{\huge\it}
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+\newcommand{\e}[1]{\cdot10^{#1}}
+
+
+\title{\huge Report 1 \\ \Huge System Programming}
+\author{\huge Baran Hasan Bozduman\\ \huge 171044036}
+\date{\today}
+\begin{document}
+\maketitle
+{\huge \textbf{Problem Definition} \\}
+
+{\large The problem was implementing advanced find command similar to find command in Linux with POSIX standards(since you allowed the library functions I used some of them) \\}
+
+{\huge \textbf{Design Decision} \\}
+
+{\large Firstly I get argument from user with getopt() then getopt() checks for missing arguments for us then I check the validity of given arguments then I implemented a recursive function which traverses all sub directories from given path and when it faces to a file it sends them to a check function to check whether it provides the given arguments. If it provides I send the current path which is in the sub directory to print function and then it prints the file with its parent directories as a tree structure. Also in case of sigint signal I implemented a signal handler and in case of errors because of users or system I print error definitions and return all resources which is allocated by program \\}
+
+{\huge \textbf{The Requirements I have achieved} \\}
+ {\large I tried the rules below and they worked properly on my computer}
+\begin{enumerate}
+    \item {\large No compilation error }
+    \item {\large No compilation warning}
+    \item {\large \check{Makefile} }
+    \item {\large \check{Report in Latex format}}
+    \item {\large Printed usage information in case of missing or invalid argument}
+    \item {\large Program did not crashed}
+    \item {\large No memory leaks}
+    \item {\large No zombie process}
+    \item {\large No deadlock}
+    \item {\large No poor synchronization}
+    \item {\large Submitted on time}
+    \item {\large Informed user in case of system errors}
+    \item {\large SIGNINT signal handled}
+    \item {\large Traversed directories recursively}
+    
+\end{enumerate}
+
+{\huge \textbf{The Requirements I have failed} \\}
+
+{\large Only I can print them as separate trees for files in same directory but this was the hardest part for me even I spend days on creating a tree structure I can not show them on same structure \\}
+
+
+\end{document}
+ 
